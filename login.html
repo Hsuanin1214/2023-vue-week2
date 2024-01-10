@@ -12,6 +12,13 @@
 </head>
 
 <body>
+    <script type="importmap">
+        {
+          "imports": {
+            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+          }
+        }
+      </script>
     <div id="app">
         <div class="container">
             <div class="row justify-content-center">
@@ -22,14 +29,14 @@
                     <form id="form" class="form-signin">
                         <div class="form-floating mb-3">
                             <input type="email" class="form-control" id="username" placeholder="name@example.com"
-                                required autofocus>
-                            <label for="username">Email address</label>
+                                required autofocus v-modal="emailValue">
+                            <label for="username"></label>
                         </div>
                         <div class="form-floating">
-                            <input type="password" class="form-control" id="password" placeholder="Password" required>
+                            <input type="password" class="form-control" id="password" placeholder="Password" v-modal="passwordValue" required>
                             <label for="password">Password</label>
                         </div>
-                        <button class="btn btn-lg btn-primary w-100 mt-3" type="submit">
+                        <button class="btn btn-lg btn-primary w-100 mt-3" type="button" @click="submitLogin">
                             登入
                         </button>
                     </form>
@@ -50,6 +57,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
         integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
         crossorigin="anonymous"></script>
+        <script src="./login.js" type="module"></script>
 </body>
 
 </html>
