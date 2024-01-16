@@ -96,8 +96,7 @@ createApp({
           console.log(error);
         });
     },
-    showProductDetail(productId){
-      const product = this.products.find(product => product.id === productId);
+    showProductDetail(product){
       this.selectedProduct = product || null;
       if (!product) {
         console.log(`Product with ID ${productId} not found.`);

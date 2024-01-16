@@ -92,8 +92,7 @@ const app = createAppVue({
           console.log(error);
         });
     }
-    function showProductDetail(productId){
-      const product = products.value.find(product => product.id === productId);
+    function showProductDetail(product){
       selectedProduct.value = product || null;
       if (!product) {
         console.log(`Product with ID ${productId} not found.`);
